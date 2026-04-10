@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>#UKATips | IA Responsable</title>
 
-    <!-- Tipografía: Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
     <style>
@@ -21,8 +20,11 @@
             --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
 
-        /* Estilos Base */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -42,28 +44,44 @@
             border: 1px solid var(--uka-border);
         }
 
-        /* --- HEADER --- */
-        .header {
-            background: var(--uka-yellow);
-            padding: 40px;
-            border-bottom: 8px solid var(--uka-blue);
+        /* HEADER INSTITUCIONAL */
+        .header-custom {
+            background-color: var(--uka-yellow);
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 5px solid var(--uka-blue);
+            gap: 20px;
         }
 
-        .header h1 {
+        .header-logo-custom img {
+            max-height: 72px;
+            width: auto;
+            display: block;
+        }
+
+        .header-titles-custom {
+            text-align: right;
+            flex: 1;
+        }
+
+        .header-titles-custom h1 {
             color: var(--uka-blue);
-            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
             font-weight: 800;
-            letter-spacing: -1.5px;
-            margin-bottom: 5px;
+            letter-spacing: -0.5px;
+            margin: 0 0 4px 0;
         }
 
-        .header p {
+        .header-titles-custom p {
             color: var(--uka-dark);
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            margin: 0;
         }
 
-        /* --- INTRO --- */
+        /* HERO */
         .hero {
             padding: 25px 40px;
             background: var(--uka-gray-light);
@@ -85,8 +103,10 @@
             box-shadow: var(--shadow);
         }
 
-        /* --- SECCIONES --- */
-        .section { padding: 40px; }
+        /* SECCIONES */
+        .section {
+            padding: 40px;
+        }
 
         .section-header {
             display: flex;
@@ -109,7 +129,7 @@
             background: var(--uka-yellow);
         }
 
-        /* --- GRIDS --- */
+        /* GRID */
         .grid-standard {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -121,13 +141,30 @@
             padding: 25px;
             border-radius: 16px;
             border: 1px solid var(--uka-border);
+            height: 100%;
         }
 
-        .card h3 { margin-bottom: 12px; font-size: 1.15rem; color: var(--uka-dark); }
-        .card-risk { border-left: 5px solid var(--uka-dark); background: #fafafa; }
-        .card-good { border-left: 5px solid var(--uka-blue); }
+        .card h3 {
+            margin-bottom: 12px;
+            font-size: 1.15rem;
+            color: var(--uka-dark);
+        }
 
-        /* --- TARJETAS DE RECURSOS (LINKS) --- */
+        .card p {
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        .card-risk {
+            border-left: 5px solid var(--uka-dark);
+            background: #fafafa;
+        }
+
+        .card-good {
+            border-left: 5px solid var(--uka-blue);
+        }
+
+        /* TARJETAS DE RECURSOS */
         .social-card {
             background: var(--uka-white);
             border: 1px solid var(--uka-border);
@@ -138,6 +175,7 @@
             text-decoration: none;
             color: inherit;
             transition: all 0.3s ease;
+            height: 100%;
         }
 
         .social-card:hover {
@@ -165,13 +203,26 @@
             transform: scale(1.05);
         }
 
-        .card-body { padding: 20px; flex-grow: 1; }
-        .card-body h3 { font-size: 1.05rem; color: var(--uka-blue); margin-bottom: 8px; }
-        .card-body p { font-size: 0.88rem; color: #475569; line-height: 1.5; }
+        .card-body {
+            padding: 20px;
+            flex-grow: 1;
+        }
 
-        /* --- ALERT BOX --- */
+        .card-body h3 {
+            font-size: 1.05rem;
+            color: var(--uka-blue);
+            margin-bottom: 8px;
+        }
+
+        .card-body p {
+            font-size: 0.88rem;
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        /* ALERTA */
         .alert-box {
-            background: var(--uka-blue); 
+            background: var(--uka-blue);
             margin-top: 30px;
             padding: 30px;
             border-radius: 16px;
@@ -190,19 +241,67 @@
             font-size: 1.2rem;
         }
 
-        /* --- FOOTER --- */
-        .footer {
+        /* FOOTER INSTITUCIONAL */
+        .footer-custom {
             background: var(--uka-blue);
             color: white;
             padding: 40px;
             text-align: center;
-            font-size: 0.9rem;
+        }
+
+        .footer-logo img {
+            max-height: 60px;
+            width: auto;
+            display: block;
+            margin: 0 auto 15px auto;
+            filter: brightness(0) invert(1);
+        }
+
+        .btn-reporte {
+            display: inline-block;
+            padding: 12px 25px;
+            border: 2px solid var(--uka-yellow);
+            color: var(--uka-yellow);
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 8px;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-reporte:hover {
+            background: var(--uka-yellow);
+            color: var(--uka-blue);
+        }
+
+        .footer-tag {
+            color: var(--uka-yellow);
+            font-weight: 800;
         }
 
         @media (max-width: 650px) {
-            .hero { flex-direction: column; text-align: center; }
-            .section { padding: 25px 20px; }
-            .alert-box { flex-direction: column; text-align: center; }
+            .header-custom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-titles-custom {
+                text-align: center;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .section {
+                padding: 25px 20px;
+            }
+
+            .alert-box {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -210,11 +309,18 @@
 
 <div class="container">
 
-    <header class="header">
-        <h1>#UKATips | IA Responsable</h1>
-        <p>Impulsando la innovación con seguridad y ética corporativa</p>
+    <!-- HEADER -->
+    <header class="header-custom">
+        <div class="header-logo-custom">
+            <img src="https://unkilodeayuda.org.mx/UKA_F_Inst_fa_RGB.png" alt="Logo Un Kilo de Ayuda">
+        </div>
+        <div class="header-titles-custom">
+            <h1>IA Responsable</h1>
+            <p>Impulsando la innovación con seguridad y ética institucional</p>|
+        </div>
     </header>
 
+    <!-- HERO -->
     <div class="hero">
         <div class="hero-icon">🛡️</div>
         <div>
@@ -254,7 +360,6 @@
         
         <div class="grid-standard">
             
-            <!-- EL ECONOMISTA -->
             <a href="https://www.eleconomista.com.mx/internacionales/fmi-sube-prevision-pib-mundial-2026-alerta-sobre-ia-riesgos-comerciales-20260119-795925.html" target="_blank" class="social-card">
                 <div class="card-image-box">
                     <img src="https://imagenes.eleconomista.com.mx/files/webp_1280_720/uploads/2025/06/08/68466d0a2b42d.jpeg" alt="Gráfica FMI">
@@ -265,7 +370,6 @@
                 </div>
             </a>
 
-            <!-- TEC DE MONTERREY (NUEVA LIGA) -->
             <a href="https://tec.mx/es/noticias/nacional/institucional/la-ia-en-el-tec-de-monterrey" target="_blank" class="social-card">
                 <div class="card-image-box">
                     <img src="https://facialix.com/wp-content/uploads/2024/07/tec-de-monterrey-curso-ia.jpg" alt="Tec de Monterrey">
@@ -276,7 +380,6 @@
                 </div>
             </a>
 
-            <!-- IPN (NUEVA LIGA) -->
             <a href="https://www.ipn.mx/cenac/notas-tics/ver-detalle.html?n=58" target="_blank" class="social-card">
                 <div class="card-image-box">
                     <img src="https://ipn.mx/assets/files/tics/img/2026/01/ia1.webp" alt="IPN IA">
@@ -320,9 +423,29 @@
         </div>
     </section>
 
-    <footer class="footer">
-        <strong>#UKATips | Dirección de Innovación Digital 2024</strong>
-        <p style="margin-top: 10px; opacity: 0.8;">Cultura de seguridad para un entorno laboral moderno.</p>
+    <!-- FOOTER -->
+    <footer class="footer-custom">
+        <div class="footer-logo">
+            <img src="https://unkilodeayuda.org.mx/UKA_F_Inst_fa_RGB.png" alt="Logo Un Kilo de Ayuda">
+        </div>
+
+        <div class="footer-content">
+            <h2 style="color: var(--uka-yellow); font-weight: 800; text-transform: uppercase; margin-bottom: 10px;">
+                ¿Necesitas Soporte Técnico?
+            </h2>
+            <p style="margin-bottom: 25px;">
+                Nuestro equipo de TI está listo para ayudarte y resolver cualquier duda técnica.
+            </p>
+
+            <a href="https://forms.office.com/r/6Ch6uvkgHK" target="_blank" class="btn-reporte">
+                INGRESA UN TICKET
+            </a>
+
+            <div style="font-size: 0.8rem; opacity: 0.85; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 20px; margin-top: 30px;">
+                <p>Un Kilo de Ayuda &copy; 2026 | Tecnologías de la Información</p>
+                <span class="footer-tag">#UKATips</span>
+            </div>
+        </div>
     </footer>
 
 </div>
